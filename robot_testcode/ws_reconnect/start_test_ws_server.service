@@ -1,0 +1,14 @@
+[Unit]
+Description=Start realant test server apps at startup
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/sh run_test_server.sh
+WorkingDirectory=/home/realant/autonomous_realant/testcode/ws_reconnect
+Restart=always
+Type=simple
+User=realant
+
+[Install]
+WantedBy=multi-user.target

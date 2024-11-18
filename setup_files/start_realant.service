@@ -1,0 +1,12 @@
+[Unit]
+Description=Start realant apps at startup
+After=network-online.target multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/sh /home/realant/autonomous_realant/run_server.sh
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
