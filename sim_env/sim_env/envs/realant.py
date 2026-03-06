@@ -527,7 +527,7 @@ class RealAntEnv(MujocoEnv, utils.EzPickle):
         return im
 
 
-class RealAntPlayroomEnv(PlayroomEnv):
+class RealAntPlayroomEnv(PlayroomEnv2):
     MODEL_CLASS = RealAntEnv
     ORI_IND = 3
     
@@ -550,32 +550,6 @@ class RealAntPlayroomEnv(PlayroomEnv):
             action_as_obs=action_as_obs,
             domain_randomization=domain_randomization,
             random_position=random_position,
-            *args,
-            **kwargs
-        )
-
-
-class RealAntNavigationEnv(NavigationEnv):
-    MODEL_CLASS = RealAntEnv
-    ORI_IND = 3
-    
-    def __init__(self,
-                 width=32,
-                 height=32,
-                 vision=False,
-                 obs_delay=0,
-                 obs_stack=3,
-                 action_as_obs=False,
-                 domain_randomization=False,
-                 *args, **kwargs):
-        super().__init__(
-            vision=vision,
-            width=width,
-            height=height,
-            obs_delay=obs_delay,
-            obs_stack=obs_stack,
-            action_as_obs=action_as_obs,
-            domain_randomization=domain_randomization,
             *args,
             **kwargs
         )
