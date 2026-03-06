@@ -2,11 +2,21 @@
 
 ## Simulation
 ```bash
+# downloading this repository
+git clone git@github.com:ugo-nama-kun/neuralhomeostat_robot.git
+
 # (create a virtual environment if necessary)
+conda create -n robot_hrrl python=3.11
+conda activate robot_hrrl
 
 # install simulator
-pip install ./homeostatic_robot_sim_env
+git clone git@github.com:ugo-nama-kun/playroom_env.git
+pip install ./playroom_env
+pip install torch pygame zmq imageio scipy matplotlib
 # Running simulation. IS_SIM=True in the code (Line 19).
+
+# move to this repository and run.
+cd neuralhomeostat_robot
 python run_experiment.py
 ```
 ## Hardware 

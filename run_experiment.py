@@ -3,20 +3,29 @@ import os
 import time
 
 import numpy as np
+import mujoco
+
+# compatibility patch: gymnasium expects solver_iter (MuJoCo 2.x)
+if not hasattr(mujoco.MjData, "solver_iter"):
+    mujoco.MjData.solver_iter = property(lambda self: self.solver_niter)
+
 import gymnasium as gym
-import homeostatic_robot_sim_env
 import torch
 import torch.nn as nn
 
 from const import FLAT_POSTURE_ACTION
 from datetime import datetime
 from model_utils import layer_init, BetaHead, LayerNormGELU
-from real_homeostatic_robot_env import RealHomeostaticRobotEnv
 from utils import get_joint
 
 FILE = "saved_model/2023-10-11-avg-20runs/PlayroomBase-v2__ppo_cooling__9__1696487298/PlayroomBase-v2__ppo_cooling__9__1696487298_final.pth"  # 1
 
-IS_SIM = True  # False for realant
+IS_SIM = True  # False for real robot experiment
+if IS_SIM:
+    import playroom_env
+else:
+    from real_homeostatic_robot_env import RealHomeostaticRobotEnv
+
 SAVE_DATA = False
 N = 100_000  # maximum steps
 
@@ -100,7 +109,7 @@ class Agent(nn.Module):
 def make_new_env():
     if IS_SIM:
         new_env = gym.make(
-            "HomeostaticRobotSim-v1",
+            "PlayroomBase-v2",
             obs_delay=0,
             obs_stack=3,
             n_food=1,
