@@ -20,7 +20,7 @@ from gymnasium.vector.utils import spaces
 from scipy.spatial.transform import Rotation as R
 
 from sim_env.envs.command_env import CommandEnv
-from sim_env.envs.playroom_env import PlayroomEnv
+from sim_env.envs.playroom_env2 import PlayroomEnv
 from sim_env.envs.navigation_env import NavigationEnv
 from sim_env.envs.on_the_board_env import OnTheBoardEnv
 

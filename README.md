@@ -8,7 +8,7 @@ conda activate robot_hrrl
 
 # install simulator
 pip install ./sim_env
-pip install torch pygame zmq
+pip install torch pygame zmq imageio scipy
 # Running simulation. IS_SIM=True in the code (Line 19).
 python run_experiment.py
 ```
