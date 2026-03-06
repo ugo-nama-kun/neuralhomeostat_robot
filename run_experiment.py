@@ -4,7 +4,7 @@ import time
 
 import numpy as np
 import gymnasium as gym
-import homeostatic_robot_sim_env
+import sim_env
 import torch
 import torch.nn as nn
 
