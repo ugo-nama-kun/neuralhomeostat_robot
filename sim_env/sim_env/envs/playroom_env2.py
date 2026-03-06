@@ -16,7 +16,7 @@ from gymnasium.envs.mujoco.mujoco_env import MujocoEnv
 from gymnasium import utils
 from scipy.spatial.transform import Rotation
 
-from playroom_env.envs.thermal_module_parametric3 import ThermalModuleParametric3
+from sim_env.envs.thermal_module_parametric3 import ThermalModuleParametric3
 
 BIG = 1e6
 DEFAULT_CAMERA_CONFIG = {}

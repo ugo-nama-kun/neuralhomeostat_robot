@@ -2,7 +2,7 @@
 import numpy as np
 
 import gymnasium
-import homeostatic_robot_sim_env
+import sim_env
 
 
 env = gymnasium.make("HomeostaticRobotSim-v1",

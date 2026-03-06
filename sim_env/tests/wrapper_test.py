@@ -1,9 +1,9 @@
 import pytest
 import torch
 
-from playroom_env.wrappers.vision import VisionEnvWrapper, to_multi_modal
+from sim_env.wrappers.vision import VisionEnvWrapper, to_multi_modal
 
-from playroom_env.envs.realant import RealAntPlayroomEnv, RealAntNavigationEnv
+from sim_env.envs.realant import RealAntPlayroomEnv, RealAntNavigationEnv
 
 
 @pytest.mark.parametrize("expected, env_class, im_setting, n_frame",

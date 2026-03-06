@@ -6,8 +6,8 @@ import numpy as np
 import torch
 from gymnasium.spaces import Box
 
-from playroom_env.envs.playroom_env import BIG
-from playroom_env.envs.realant import RealAntPlayroomEnv, RealAntNavigationEnv
+from sim_env.envs.playroom_env import BIG
+from sim_env.envs.realant import RealAntPlayroomEnv, RealAntNavigationEnv
 
 
 class VisionEnvWrapper(gymnasium.ObservationWrapper):

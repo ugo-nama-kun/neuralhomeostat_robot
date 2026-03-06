@@ -19,10 +19,10 @@ from gymnasium.vector.utils import spaces
 
 from scipy.spatial.transform import Rotation as R
 
-from playroom_env.envs.command_env import CommandEnv
-from playroom_env.envs.playroom_env import PlayroomEnv
-from playroom_env.envs.navigation_env import NavigationEnv
-from playroom_env.envs.on_the_board_env import OnTheBoardEnv
+from sim_env.envs.command_env import CommandEnv
+from sim_env.envs.playroom_env import PlayroomEnv
+from sim_env.envs.navigation_env import NavigationEnv
+from sim_env.envs.on_the_board_env import OnTheBoardEnv
 
 # Code is mostly based on the original paper and provided code
 # https://github.com/alexlioralexli/rllab-finetuning/blob/2dae9141d0fdc284d04f18931907131d66b43023/sandbox/finetuning/envs/mujoco/ant_env.py

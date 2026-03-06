@@ -5,9 +5,9 @@ import numpy.testing as npt
 
 from pytest import approx
 
-from playroom_env.envs.realant import RealAntPlayroomEnv, RealAntEnv, RealAntNavigationEnv
-from playroom_env.envs.realant_base import RealAntBasePlayroomEnv, RealAntBasePlayroomEnv2
-from playroom_env.envs.playroom_env import InteroClass, ObjectClass
+from sim_env.envs.realant import RealAntPlayroomEnv, RealAntEnv, RealAntNavigationEnv
+from sim_env.envs.realant_base import RealAntBasePlayroomEnv, RealAntBasePlayroomEnv2
+from sim_env.envs.playroom_env import InteroClass, ObjectClass
 
 def variance_of_uniform(a, b):
     assert a < b

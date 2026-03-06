@@ -6,7 +6,7 @@ import numpy as np
 from tqdm import tqdm
 
 import gymnasium
-import homeostatic_robot_sim_env
+import sim_env
 
 env = gymnasium.make("OnTheBoard-v0")
 
@@ -41,7 +41,7 @@ for _ in tqdm(range(L)):
     
     steps += 1
 
-os.makedirs("homeostatic_robot_sim_env/data_pid", exist_ok=True)
+os.makedirs("sim_env/data_pid", exist_ok=True)
 
 import matplotlib.pyplot as plt
 
@@ -51,14 +51,14 @@ for i in range(8):
     plt.plot(time_tick, np.vstack(target_hist)[:, i], "k--", alpha=0.6)
     plt.plot(time_tick, np.vstack(joint_hist)[:, i], "r", alpha=0.6)
     
-    np.save(f"homeostatic_robot_sim_env/data_pid/target{i}.npy", np.vstack(target_hist)[:, i])
-    np.save(f"homeostatic_robot_sim_env/data_pid/joint{i}.npy", np.vstack(joint_hist)[:, i])
+    np.save(f"sim_env/data_pid/target{i}.npy", np.vstack(target_hist)[:, i])
+    np.save(f"sim_env/data_pid/joint{i}.npy", np.vstack(joint_hist)[:, i])
     
     if i == 0:
         plt.xlabel("time [sec]")
         plt.ylabel("angle [rad]")
 
-np.save(f"homeostatic_robot_sim_env/data_pid/time_tick.npy", time_tick)
+np.save(f"sim_env/data_pid/time_tick.npy", time_tick)
 
 env.close()
 

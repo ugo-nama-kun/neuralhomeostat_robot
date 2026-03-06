@@ -3,8 +3,8 @@ import numpy as np
 
 from pytest import approx
 
-from playroom_env.envs.command_env import Commands
-from playroom_env.envs.realant_base import RealAntBasePlayroomEnv, RealAntBaseEnv, RealAntBaseCommandEnv, RealAntBaseNavigationEnv, RealAntBasePlayroomEnv2
+from sim_env.envs.command_env import Commands
+from sim_env.envs.realant_base import RealAntBasePlayroomEnv, RealAntBaseEnv, RealAntBaseCommandEnv, RealAntBaseNavigationEnv, RealAntBasePlayroomEnv2
 
 
 def test_instance():
